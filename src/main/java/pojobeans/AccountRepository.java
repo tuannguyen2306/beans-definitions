@@ -6,5 +6,5 @@ package pojobeans;
 public interface AccountRepository {
     void insert(Account account);
     void update(Account account);
-    Account find(long acconutid);
+    Account find(long acconutId);
 }

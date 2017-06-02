@@ -7,8 +7,8 @@ import java.util.Date;
  */
 public class Account {
     private long id;
-    private String name;
-    private double balancel;
+    private String ownerName;
+    private double balance;
     private Date accessTime;
     private boolean locked;
 
@@ -20,20 +20,20 @@ public class Account {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getOwnerName() {
+        return ownerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
     }
 
-    public double getBalancel() {
-        return balancel;
+    public double getBalance() {
+        return balance;
     }
 
-    public void setBalancel(double balancel) {
-        this.balancel = balancel;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public Date getAccessTime() {

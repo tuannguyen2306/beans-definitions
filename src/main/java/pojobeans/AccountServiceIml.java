@@ -16,8 +16,8 @@ public class AccountServiceIml implements AccountService {
     public void transferMoney(long fromAccountId, long toAccountId, double amount) {
         Account sourceAccount = accountRepository.find(fromAccountId);
         Account targetAccount = accountRepository.find(toAccountId);
-        sourceAccount.setBalancel(sourceAccount.getBalancel() - amount);
-        targetAccount.setBalancel(targetAccount.getBalancel() + amount);
+        sourceAccount.setBalance(sourceAccount.getBalance() - amount);
+        targetAccount.setBalance(targetAccount.getBalance() + amount);
         accountRepository.update(sourceAccount);
         accountRepository.update(targetAccount);
     }
@@ -25,7 +25,7 @@ public class AccountServiceIml implements AccountService {
     @Override
     public void depositMoney(long accountId, double amount) throws Exception {
         Account account = accountRepository.find(accountId);
-        account.setBalancel(account.getBalancel() + amount);
+        account.setBalance(account.getBalance() + amount);
         accountRepository.update(account);
     }
 
