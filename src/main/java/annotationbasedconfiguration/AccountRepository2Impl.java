@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 import pojobeans.Account;
 import pojobeans.AccountRepository;
 
+import javax.annotation.PostConstruct;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,8 +14,24 @@ import java.util.Map;
 @Repository
 public class AccountRepository2Impl implements AccountRepository {
 
-    private Map<Long,Account> accountMap = new HashMap<>();
-    {
+    private Map<Long,Account> accountMap;
+//    {
+//        Account account1 = new Account();
+//        account1.setId(1L);
+//        account1.setOwnerName("john");
+//        account1.setBalance(10.0);
+//
+//        Account account2 = new Account();
+//        account2.setId(2L);
+//        account2.setOwnerName("Mary");
+//        account2.setBalance(20.0);
+//
+//        accountMap.put(account1.getId(), account1);
+//        accountMap.put(account2.getId(), account2);
+//    }
+    @PostConstruct
+    public void initData(){
+        accountMap = new HashMap<>();
         Account account1 = new Account();
         account1.setId(1L);
         account1.setOwnerName("john");

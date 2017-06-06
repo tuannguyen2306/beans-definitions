@@ -6,7 +6,16 @@ package pojobeans;
 public class AccountServiceIml implements AccountService {
 
     private AccountRepository accountRepository;
+    // Dependency injection via Setter method
+    public AccountServiceIml(AccountRepository accountRepository) {
+        this.accountRepository = accountRepository;
+    }
 
+    public AccountServiceIml() {
+
+    }
+
+    // Dependency injection via Setter method
     public void setAccountRepository(AccountRepository accountRepository){
         this.accountRepository = accountRepository;
     }

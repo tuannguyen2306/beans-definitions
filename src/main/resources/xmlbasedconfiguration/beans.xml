@@ -5,7 +5,27 @@
 
     <bean id="accountRepository" class="pojobeans.AccountRepositoryIml"/>
 
+    <!-- configuration XML manual with setter  -->
+    <!--<bean id="accountService" class="pojobeans.AccountServiceIml">-->
+        <!--<property name="accountRepository" ref="accountRepository"/>-->
+    <!--</bean>-->
+
+    <!-- configuration manual XML with Contructor -->
     <bean id="accountService" class="pojobeans.AccountServiceIml">
-        <property name="accountRepository" ref="accountRepository"/>
+        <constructor-arg name="accountRepository" ref="accountRepository"/>
     </bean>
+
+    <bean id="account1" class="pojobeans.Account">
+        <property name="id" value="1"/>
+        <property name="ownerName" value="John"/>
+        <property name="balance" value="21.2"/>
+    </bean>
+
+    <bean id="account2" class="pojobeans.Account">
+        <property name="id" value="1"/>
+        <property name="ownerName" value="John"/>
+        <property name="balance" value="21.2"/>
+    </bean>
+
+
 </beans>
